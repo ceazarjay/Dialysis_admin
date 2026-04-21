@@ -503,6 +503,8 @@ with rep_cols[1]:
         hole=0.6,
         marker_colors=[PEER_COL, HUS_COL],
         textinfo="label+percent",
+        textfont=dict(color=TEXT_DARK, size=12),
+        outsidetextfont=dict(color=TEXT_DARK, size=12),
         hovertemplate="%{label}: %{value} sentre<extra></extra>",
     ))
     fig_donut.update_layout(
