@@ -246,7 +246,7 @@ st.markdown(f"""
 # ═══════════════════════════════════════════════════════════════════════════
 # SECTION 1 – KPI SCORECARD   (Gestalt: Common Region + Proximity)
 # ═══════════════════════════════════════════════════════════════════════════
-st.markdown('<div class="section-strip">📊 Nøkkeltall på ett blikk</div>', unsafe_allow_html=True)
+st.markdown('<div class="section-strip">Nøkkeltall på ett blikk</div>', unsafe_allow_html=True)
 
 peers_sl = [v for k, v in sick_leave.items() if k != "HUS" and v is not None]
 peer_avg_sl = round(sum(peers_sl) / len(peers_sl), 1)
@@ -290,7 +290,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 # ═══════════════════════════════════════════════════════════════════════════
 # SECTION 2 – SYKEFRAVÆR   (Gestalt: Figure-ground, Similarity)
 # ═══════════════════════════════════════════════════════════════════════════
-st.markdown('<div class="section-strip">🏥 Sykefravær – HUS skiller seg dramatisk ut</div>',
+st.markdown('<div class="section-strip">Sykefravær – HUS skiller seg dramatisk ut</div>',
             unsafe_allow_html=True)
 
 st.markdown(f"""
@@ -315,7 +315,7 @@ st.plotly_chart(fig_sl, use_container_width=True)
 # SECTION 3 – PASIENT:SYKEPLEIER-RATIO
 # ═══════════════════════════════════════════════════════════════════════════
 st.markdown("<br>", unsafe_allow_html=True)
-st.markdown('<div class="section-strip">👩‍⚕️ Pasient : sykepleier-ratio</div>',
+st.markdown('<div class="section-strip">Pasient : sykepleier-ratio</div>',
             unsafe_allow_html=True)
 
 col_a, col_b = st.columns([2, 1], gap="large")
@@ -358,7 +358,7 @@ with col_b:
 # SECTION 4 – FELLESVAKTER   (Continuity: builds on previous context)
 # ═══════════════════════════════════════════════════════════════════════════
 st.markdown("<br>", unsafe_allow_html=True)
-st.markdown('<div class="section-strip">⚠️ Fellesvakter – HUS er alene i Norge</div>',
+st.markdown('<div class="section-strip">Fellesvakter – HUS er alene i Norge</div>',
             unsafe_allow_html=True)
 
 st.markdown(f"""
@@ -374,7 +374,7 @@ fw_cols = st.columns(len(hospitals), gap="small")
 for i, (col, h) in enumerate(zip(fw_cols, hospitals)):
     is_hus = h == "HUS"
     bg = HUS_COL if is_hus else "#E8EDF2"
-    fg = "#fff" if is_hus else PEER_COL
+    fg = "#fff" if is_hus else TEXT_DARK
     icon = "✗" if is_hus else "✓"
     label = "JA" if is_hus else "NEI"
     col.markdown(f"""
@@ -391,7 +391,7 @@ for i, (col, h) in enumerate(zip(fw_cols, hospitals)):
 # SECTION 5 – OPPLÆRINGSTID + FERIEAVVIKLING
 # ═══════════════════════════════════════════════════════════════════════════
 st.markdown("<br>", unsafe_allow_html=True)
-st.markdown('<div class="section-strip">📚 Opplæringstid & ferieavvikling</div>',
+st.markdown('<div class="section-strip">Opplæringstid & ferieavvikling</div>',
             unsafe_allow_html=True)
 
 col_left, col_right = st.columns(2, gap="large")
@@ -432,8 +432,8 @@ with col_right:
         txt = f"<strong style='color:{HUS_COL};'>{h}</strong>" if is_hus else h
         rows.append(f"""
         <tr style="background:{bg};">
-          <td style="padding:6px 10px; font-weight:{'700' if is_hus else '400'};">{txt}</td>
-          <td style="padding:6px 10px; color:{HUS_COL if is_hus else TEXT_MID};">
+          <td style="padding:6px 10px; font-weight:{'700' if is_hus else '400'}; color:{HUS_COL if is_hus else TEXT_DARK};">{txt}</td>
+          <td style="padding:6px 10px; color:{HUS_COL if is_hus else TEXT_DARK};">
             {vacation[h]}
           </td>
         </tr>""")
@@ -460,7 +460,7 @@ with col_right:
 # SECTION 6 – FRAVÆRSDEKNING (Replacement during absence)
 # ═══════════════════════════════════════════════════════════════════════════
 st.markdown("<br>", unsafe_allow_html=True)
-st.markdown('<div class="section-strip">🔄 Hvem erstatter ved sykdom og fravær?</div>',
+st.markdown('<div class="section-strip">Hvem erstatter ved sykdom og fravær?</div>',
             unsafe_allow_html=True)
 
 rep_rows = []
@@ -470,8 +470,8 @@ for h in hospitals:
     hname = f"<strong style='color:{HUS_COL};'>{h}</strong>" if is_hus else h
     rep_rows.append(f"""
     <tr style="background:{bg};">
-      <td style="padding:6px 12px;">{hname}</td>
-      <td style="padding:6px 12px; color:{HUS_COL if is_hus else TEXT_MID};">
+      <td style="padding:6px 12px; color:{HUS_COL if is_hus else TEXT_DARK};">{hname}</td>
+      <td style="padding:6px 12px; color:{HUS_COL if is_hus else TEXT_DARK};">
         {absence_rep[h]}
       </td>
     </tr>""")
@@ -518,7 +518,7 @@ with rep_cols[1]:
 # SECTION 7 – PASIENTVOLUM VS BEMANNING  (Scatterplot)
 # ═══════════════════════════════════════════════════════════════════════════
 st.markdown("<br>", unsafe_allow_html=True)
-st.markdown('<div class="section-strip">📈 Pasientvolum vs. registrerte årsverk</div>',
+st.markdown('<div class="section-strip">Pasientvolum vs. registrerte årsverk</div>',
             unsafe_allow_html=True)
 
 scatter_h = [h for h in hospitals if staff_fte[h] is not None]
@@ -564,28 +564,28 @@ st.markdown(f"""
   <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:16px;">
     <div style="background:rgba(255,255,255,0.08); border-radius:8px; padding:16px;">
       <div style="color:{HUS_COL}; font-weight:700; margin-bottom:6px;">
-        ⚠️ Sykefravær
+        Sykefravær
       </div>
       23 % sykefravær — {23/peer_avg_sl:.1f}× peer-snittet.
       Høyt fravær og underdekning forsterker hverandre.
     </div>
     <div style="background:rgba(255,255,255,0.08); border-radius:8px; padding:16px;">
       <div style="color:{HUS_COL}; font-weight:700; margin-bottom:6px;">
-        ⚠️ Pasient : sykepleier-ratio
+        Pasient : sykepleier-ratio
       </div>
       Opptil 6 pasienter per sykepleier på topp, med utpostansvar i tillegg.
       Alle andre sentre holder 2,5.
     </div>
     <div style="background:rgba(255,255,255,0.08); border-radius:8px; padding:16px;">
       <div style="color:{HUS_COL}; font-weight:700; margin-bottom:6px;">
-        ⚠️ Fellesvakter
+        Fellesvakter
       </div>
       HUS er det <strong style="color:#fff;">eneste</strong> dialysesenteret i Norge
       som fortsatt bruker fellesvakter. Dette undergraver faglig kompetanse og trygghet.
     </div>
     <div style="background:rgba(255,255,255,0.08); border-radius:8px; padding:16px;">
       <div style="color:{HUS_COL}; font-weight:700; margin-bottom:6px;">
-        ⚠️ Dekning ved fravær og ferie
+        Dekning ved fravær og ferie
       </div>
       HUS bruker studenter og fellesvakter. Alle øvrige sentre bruker opplærte
       dialysesykepleiere. Dette er en pasientsikkerhetsrisiko.
