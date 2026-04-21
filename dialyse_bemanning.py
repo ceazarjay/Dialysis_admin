@@ -339,7 +339,7 @@ with col_b:
     st.markdown(f"""
     <div class="metric-card hus" style="margin-top:30px;">
       <div class="metric-val red">3-6 pas.</div>
-      <div class="metric-label">HUS – oppgitt maks pasienter  per sykepleier<br>på topp-vakter</div>
+      <div class="metric-label">HUS – oppgitt maks pasienter  per sykepleier<br></div>
     </div>
     <br>
     <div class="metric-card" style="margin-top:0;">
