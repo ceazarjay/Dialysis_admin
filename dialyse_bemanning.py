@@ -330,7 +330,7 @@ with col_a:
                       reference_line=2.5, ref_label="Bransjestd. 2.5")
     # Add annotation on HUS bar
     fig_pt.add_annotation(
-        x="HUS", y=6,2, text="+ utpostansvar",
+        x="HUS", y=6.2, text="+ utpostansvar",
         showarrow=False, font=dict(color=HUS_COL, size=11, family="Segoe UI"),
     )
     st.plotly_chart(fig_pt, use_container_width=True)
