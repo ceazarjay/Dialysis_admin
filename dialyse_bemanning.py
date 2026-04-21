@@ -507,7 +507,7 @@ with rep_cols[1]:
         hovertemplate="%{label}: %{value} dialyseenhet<extra></extra>",
     ))
     fig_donut.update_layout(
-        title=dict(text="Fraværsdekning – type vikar", font=dict(size=12),color="black" x=0),
+        title=dict(text="Fraværsdekning – type vikar", font=dict(size=12, color="black"), x=0),
         margin=dict(l=10, r=10, t=40, b=10),
         paper_bgcolor="white", height=260,
         showlegend=False,
