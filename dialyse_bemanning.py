@@ -363,8 +363,7 @@ st.markdown('<div class="section-strip">Fellesvakter – HUS er alene i Norge</d
 
 st.markdown(f"""
 <div class="callout">
-  <strong>Fellesvakter</strong> betyr at sykepleiere med 3 dagers dialyseopplæring
-  rullerer til andre avdelinger. Det fører til redusert spesialisert erfaring,
+  <strong>Fellesvakter</strong> fører til redusert spesialisert kunnskap og erfaring,
   økt forvirring og lavere faglig kompetanse. HUS er det
   <strong>eneste</strong> dialysesenteret i Norge som bruker dette.
 </div>
