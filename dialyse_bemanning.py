@@ -297,7 +297,7 @@ st.markdown(f"""
 <div class="callout">
   <strong>HUS har 23 % sykefravær</strong> — det er {23/peer_avg_sl:.1f}× gjennomsnittet
   for sammenlignbare sentre ({peer_avg_sl} %). Høyt fravær er både en konsekvens
-  <em>og</em> en forsterkende årsak til underbemanningen.
+  <em>og</em> årsak til underbemanningen.
 </div>
 """, unsafe_allow_html=True)
 
@@ -307,7 +307,7 @@ sl_vals  = [sick_leave[h] for h in sl_hosp]
 fig_sl = make_bar(sl_hosp, sl_vals,
                   ylabel="Sykefravær (%)", fmt_pct=True,
                   reference_line=peer_avg_sl,
-                  ref_label=f"Peer-gjennomsnitt {peer_avg_sl} %")
+                  ref_label=f"Gjennomsnitt {peer_avg_sl} %")
 st.plotly_chart(fig_sl, use_container_width=True)
 
 
@@ -348,7 +348,7 @@ with col_b:
     </div>
     <br>
     <div class="callout">
-      HUS er <strong>eneste</strong> senter som i tillegg pålegger sykepleiere
+      HUS er den <strong>ENESTE</strong> dialyseenhet med 
       utpostansvar <em>uten</em> økt bemanning på avdelingen.
     </div>
     """, unsafe_allow_html=True)
@@ -365,8 +365,8 @@ st.markdown(f"""
 <div class="callout">
   <strong>Fellesvakter</strong> betyr at sykepleiere med dialyseopplæring
   rullerer til andre avdelinger. Det fører til redusert spesialisert erfaring,
-  økt forvirring og lavere faglig trygghet — og HUS er det
-  <strong>eneste</strong> dialysesenteret i Norge som fortsatt bruker dette.
+  økt forvirring og lavere faglig trygghet. HUS er det
+  <strong>eneste</strong> dialysesenteret i Norge som bruker dette.
 </div>
 """, unsafe_allow_html=True)
 
@@ -451,8 +451,8 @@ with col_right:
     """, unsafe_allow_html=True)
     st.markdown(f"""
     <div class="callout" style="margin-top:10px;">
-      HUS dekker ferier med <strong>50 % studenter</strong>.
-      Alle øvrige sentre benytter opplærte dialysesykepleiere eller egne faste vikarer.
+      HUS dekker ferie med <strong>50 % studenter</strong>.
+      Alle øvrige sentre har dialysesykepleiere eller egne faste vikarer.
     </div>""", unsafe_allow_html=True)
 
 
@@ -520,7 +520,7 @@ with rep_cols[1]:
 # SECTION 7 – PASIENTVOLUM VS BEMANNING  (Scatterplot)
 # ═══════════════════════════════════════════════════════════════════════════
 st.markdown("<br>", unsafe_allow_html=True)
-st.markdown('<div class="section-strip">Pasientvolum vs. registrerte årsverk</div>',
+st.markdown('<div class="section-strip">Antall pasient vs. registrerte årsverk</div>',
             unsafe_allow_html=True)
 
 scatter_h = [h for h in hospitals if staff_fte[h] is not None]
@@ -552,7 +552,7 @@ fig_sc.update_layout(
     height=340,
 )
 st.plotly_chart(fig_sc, use_container_width=True)
-st.caption("Merk: HUS har 91 HD-pasienter + store utposter (Sotra, Nord-Hordaland) på 32,8 registrerte årsverk.")
+st.caption("Merk: HUS har 91 HD-pasienter + største antall utposter på 32,8 registrerte årsverk.")
 
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -575,7 +575,7 @@ st.markdown(f"""
       <div style="color:{HUS_COL}; font-weight:700; margin-bottom:6px;">
         Pasient : sykepleier-ratio
       </div>
-      Opptil 6 pasienter per sykepleier på topp, med utpostansvar i tillegg.
+      Opptil 6 pasienter per sykepleier (skjer ofte under ferie), med utpostansvar i tillegg.
       Alle andre sentre holder 2,5.
     </div>
     <div style="background:rgba(255,255,255,0.08); border-radius:8px; padding:16px;">
@@ -583,14 +583,14 @@ st.markdown(f"""
         Fellesvakter
       </div>
       HUS er det <strong style="color:#fff;">eneste</strong> dialysesenteret i Norge
-      som fortsatt bruker fellesvakter. Dette undergraver faglig kompetanse og trygghet.
+      som fortsatt bruker fellesvakter.
     </div>
     <div style="background:rgba(255,255,255,0.08); border-radius:8px; padding:16px;">
       <div style="color:{HUS_COL}; font-weight:700; margin-bottom:6px;">
         Dekning ved fravær og ferie
       </div>
-      HUS bruker studenter og fellesvakter. Alle øvrige sentre bruker opplærte
-      dialysesykepleiere. Dette er en pasientsikkerhetsrisiko.
+      HUS bruker studenter og fellesvakter. Alle øvrige dialyseenhet bruker opplært
+      dialysesykepleiere.
     </div>
   </div>
   <div style="margin-top:22px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.15);
