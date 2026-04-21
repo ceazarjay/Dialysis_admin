@@ -181,7 +181,7 @@ def make_bar(x_vals, y_vals, ylabel="", title="", hus_label=None,
              reference_line=None, ref_label="", fmt_pct=False):
     """Horizontal bar chart with figure-ground emphasis on HUS."""
     colours = [bar_colour(h) for h in x_vals]
-    customdata = [("HUS – ditt sykehus" if h == "HUS" else h) for h in x_vals]
+    customdata = [("HUS" if h == "HUS" else h) for h in x_vals]
     hover = "%{customdata}: %{y:.1f}" + ("%" if fmt_pct else "")
 
     fig = go.Figure(go.Bar(
