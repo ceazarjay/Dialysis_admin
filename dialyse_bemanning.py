@@ -246,7 +246,7 @@ st.markdown(f"""
 # ═══════════════════════════════════════════════════════════════════════════
 # SECTION 1 – KPI SCORECARD   (Gestalt: Common Region + Proximity)
 # ═══════════════════════════════════════════════════════════════════════════
-st.markdown('<div class="section-strip">Nøkkeltall på ett blikk</div>', unsafe_allow_html=True)
+st.markdown('<div class="section-strip">Nøkkeltallene</div>', unsafe_allow_html=True)
 
 peers_sl = [v for k, v in sick_leave.items() if k != "HUS" and v is not None]
 peer_avg_sl = round(sum(peers_sl) / len(peers_sl), 1)
@@ -282,7 +282,7 @@ with cols[3]:
     st.markdown(f"""
     <div class="metric-card">
       <div class="metric-val grey">2.5</div>
-      <div class="metric-label">Pasienter per sykepleier<br>standard øvrige sentre</div>
+      <div class="metric-label">Pasienter per sykepleier<br>standard</div>
     </div>""", unsafe_allow_html=True)
 
 st.markdown("<br>", unsafe_allow_html=True)
@@ -296,7 +296,7 @@ st.markdown('<div class="section-strip">Sykefravær – HUS skiller seg dramatis
 st.markdown(f"""
 <div class="callout">
   <strong>HUS har 23 % sykefravær</strong> — det er {23/peer_avg_sl:.1f}× gjennomsnittet
-  for sammenlignbare sentre ({peer_avg_sl} %). Høyt fravær er både en konsekvens
+  ({peer_avg_sl} %). Høyt fravær er både en konsekvens
   <em>og</em> årsak til underbemanningen.
 </div>
 """, unsafe_allow_html=True)
@@ -363,9 +363,9 @@ st.markdown('<div class="section-strip">Fellesvakter – HUS er alene i Norge</d
 
 st.markdown(f"""
 <div class="callout">
-  <strong>Fellesvakter</strong> betyr at sykepleiere med dialyseopplæring
+  <strong>Fellesvakter</strong> betyr at sykepleiere med 3 dagers dialyseopplæring
   rullerer til andre avdelinger. Det fører til redusert spesialisert erfaring,
-  økt forvirring og lavere faglig trygghet. HUS er det
+  økt forvirring og lavere faglig kompetanse. HUS er det
   <strong>eneste</strong> dialysesenteret i Norge som bruker dette.
 </div>
 """, unsafe_allow_html=True)
@@ -452,7 +452,7 @@ with col_right:
     st.markdown(f"""
     <div class="callout" style="margin-top:10px;">
       HUS dekker ferie med <strong>50 % studenter</strong>.
-      Alle øvrige sentre har dialysesykepleiere eller egne faste vikarer.
+      Alle andre dialyseenhet har dialysesykepleiere eller egne faste vikarer.
     </div>""", unsafe_allow_html=True)
 
 
@@ -568,21 +568,21 @@ st.markdown(f"""
       <div style="color:{HUS_COL}; font-weight:700; margin-bottom:6px;">
         Sykefravær
       </div>
-      23 % sykefravær — {23/peer_avg_sl:.1f}× peer-snittet.
-      Høyt fravær og underdekning forsterker hverandre.
+      23 % sykefravær — {23/peer_avg_sl:.1f}×.
+      Høyt fravær og underbemanning er relatert med hverandre.
     </div>
     <div style="background:rgba(255,255,255,0.08); border-radius:8px; padding:16px;">
       <div style="color:{HUS_COL}; font-weight:700; margin-bottom:6px;">
         Pasient : sykepleier-ratio
       </div>
       Opptil 6 pasienter per sykepleier (skjer ofte under ferie), med utpostansvar i tillegg.
-      Alle andre sentre holder 2,5.
+      Alle andre dialyseenhet holder 2,5.
     </div>
     <div style="background:rgba(255,255,255,0.08); border-radius:8px; padding:16px;">
       <div style="color:{HUS_COL}; font-weight:700; margin-bottom:6px;">
         Fellesvakter
       </div>
-      HUS er det <strong style="color:#fff;">eneste</strong> dialysesenteret i Norge
+      HUS er det <strong style="color:#fff;">ENESTE</strong> dialysesenteret i Norge
       som fortsatt bruker fellesvakter.
     </div>
     <div style="background:rgba(255,255,255,0.08); border-radius:8px; padding:16px;">
