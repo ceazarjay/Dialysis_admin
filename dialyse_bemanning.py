@@ -315,7 +315,7 @@ st.plotly_chart(fig_sl, use_container_width=True)
 # SECTION 3 – PASIENT:SYKEPLEIER-RATIO
 # ═══════════════════════════════════════════════════════════════════════════
 st.markdown("<br>", unsafe_allow_html=True)
-st.markdown('<div class="section-strip">Pasient : sykepleier-ratio</div>',
+st.markdown('<div class="section-strip">Pasienter per sykepleier</div>',
             unsafe_allow_html=True)
 
 col_a, col_b = st.columns([2, 1], gap="large")
