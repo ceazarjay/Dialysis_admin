@@ -234,7 +234,7 @@ st.markdown(f"""
     Bemanningssituasjonen ved HUS Dialyse
   </h1>
   <p style="margin:8px 0 0; color:#B0C4CF; font-size:1rem;">
-    Sammenligning med 9 norske dialysesentre · Data innhentet 2025
+    Sammenligning med 9 dialyseenhet i Norge · Data innhentet 2025
   </p>
   <div style="margin-top:14px;">
     <span class="chip chip-hus">● HUS</span>
