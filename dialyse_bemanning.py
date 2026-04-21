@@ -237,8 +237,8 @@ st.markdown(f"""
     Sammenligning med 9 norske dialysesentre · Data innhentet 2025
   </p>
   <div style="margin-top:14px;">
-    <span class="chip chip-hus">● HUS – ditt sykehus</span>
-    <span class="chip chip-peer">● Øvrige sentre</span>
+    <span class="chip chip-hus">● HUS</span>
+    <span class="chip chip-peer">● Andre Dialyse enhet</span>
   </div>
 </div>
 """, unsafe_allow_html=True)
@@ -266,7 +266,7 @@ with cols[1]:
     st.markdown(f"""
     <div class="metric-card">
       <div class="metric-val grey">{peer_avg_sl} %</div>
-      <div class="metric-label">Sykefravær<br>gjennomsnitt øvrige sentre</div>
+      <div class="metric-label">Sykefravær<br>gjennomsnitt andre dialyseenhet</div>
     </div>""", unsafe_allow_html=True)
 
 with cols[2]:
@@ -375,7 +375,7 @@ for i, (col, h) in enumerate(zip(fw_cols, hospitals)):
     is_hus = h == "HUS"
     bg = HUS_COL if is_hus else "#E8EDF2"
     fg = "#fff" if is_hus else TEXT_DARK
-    icon = "✗" if is_hus else "✓"
+    icon = "✓" if is_hus else "✗"
     label = "JA" if is_hus else "NEI"
     col.markdown(f"""
     <div style="background:{bg}; color:{fg}; border-radius:8px;
