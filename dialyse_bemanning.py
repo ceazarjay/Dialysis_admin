@@ -19,12 +19,13 @@ st.set_page_config(
 # Figure-ground: ONE salient colour for HUS (alarm red), muted slate for peers.
 # Similarity: same HUS colour repeated across every chart → no need to re-learn.
 HUS_COL   = "#C0392B"   # vivid red  → HUS always "pops"
-PEER_COL  = "#7F8C9A"   # muted blue-grey → recedes into ground
+PEER_COL  = "#7F8C9A"   # muted blue-grey → chart bars only (recedes into ground)
+PEER_TEXT = "#2C3E50"   # dark navy-grey → peer text/labels, readable on white
 BG_PAGE   = "#F7F9FC"
 BG_CARD   = "#FFFFFF"
 TEXT_DARK = "#1A252F"
-TEXT_MID  = "#4A6070"
-ACCENT    = "#2E86AB"   # used only for positive highlights / links
+TEXT_MID  = "#2C3E50"   # darkened from #4A6070 for legibility on white
+ACCENT    = "#1A6B8A"   # deeper teal → readable on white (was #2E86AB)
 WARN_BG   = "#FFF3F2"
 
 # ── Global CSS ────────────────────────────────────────────────────────────────
@@ -58,7 +59,7 @@ st.markdown(f"""
     line-height: 1.1;
   }}
   .metric-val.red {{ color: {HUS_COL}; }}
-  .metric-val.grey {{ color: {PEER_COL}; }}
+  .metric-val.grey {{ color: {PEER_TEXT}; }}
   .metric-label {{
     font-size: 0.82rem;
     color: {TEXT_MID};
@@ -525,13 +526,14 @@ scatter_s = [16 if h == "HUS" else 10 for h in scatter_h]
 
 fig_sc = go.Figure()
 for h, x, y, c, s in zip(scatter_h, scatter_x, scatter_y, scatter_c, scatter_s):
+    label_col = HUS_COL if h == "HUS" else PEER_TEXT
     fig_sc.add_trace(go.Scatter(
         x=[x], y=[y],
         mode="markers+text",
         marker=dict(color=c, size=s, line=dict(color="white", width=1.5)),
         text=[h],
         textposition="top center",
-        textfont=dict(size=10, color=c),
+        textfont=dict(size=10, color=label_col),
         name=h,
         hovertemplate=f"{h}: {x} HD-pas., {y} årsverk<extra></extra>",
         showlegend=False,
