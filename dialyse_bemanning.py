@@ -344,7 +344,7 @@ with col_b:
     <br>
     <div class="metric-card" style="margin-top:0;">
       <div class="metric-val grey">2.5 pas.</div>
-      <div class="metric-label">Standard ved alle<br>øvrige sentre</div>
+      <div class="metric-label">Standard ved andre<br>dialyseenhet</div>
     </div>
     <br>
     <div class="callout">
