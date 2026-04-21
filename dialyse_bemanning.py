@@ -274,7 +274,7 @@ with cols[2]:
     <div class="metric-card hus">
       <div class="metric-val red">opptil 3-6</div>
       <div class="metric-label">Pasienter per sykepleier – HUS<br>
-        <span style="color:{HUS_COL};font-weight:700;">+ utpostansvar</span>
+        <span style="color:{HUS_COL};font-weight:700;">+ 2 pasienter på utpost</span>
       </div>
     </div>""", unsafe_allow_html=True)
 
