@@ -411,7 +411,7 @@ with col_left:
                      annotation_font_color=ACCENT,
                      annotation_position="top right")
     fig_tw.update_layout(
-        title=dict(text="Opplæringstid for ny dialysesykepleier (uker)",
+        title=dict(text="Opplæringstid for nye dialysesykepleiere (uker)",
                    font=dict(size=13, color=TEXT_DARK), x=0),
         plot_bgcolor="white", paper_bgcolor="white",
         margin=dict(l=10, r=10, t=40, b=10),
@@ -504,7 +504,7 @@ with rep_cols[1]:
         textinfo="label+percent",
         textfont=dict(color=TEXT_DARK, size=12),
         outsidetextfont=dict(color=TEXT_DARK, size=12),
-        hovertemplate="%{label}: %{value} sentre<extra></extra>",
+        hovertemplate="%{label}: %{value} dialyseenhet<extra></extra>",
     ))
     fig_donut.update_layout(
         title=dict(text="Fraværsdekning – type vikar", font=dict(size=12), x=0),
