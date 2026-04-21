@@ -327,7 +327,7 @@ with col_a:
     # Annotate HUS bar with "+ utpost"
     fig_pt = make_bar(pt_hosp, pt_vals,
                       ylabel="Pasienter per sykepleier",
-                      reference_line=2.5, ref_label="Bransjestd. 2.5")
+                      reference_line=2.5, ref_label="standard. 2.5")
     # Add annotation on HUS bar
     fig_pt.add_annotation(
         x="HUS", y=6.2, text="+ utpostansvar",
