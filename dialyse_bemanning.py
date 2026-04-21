@@ -209,8 +209,10 @@ def make_bar(x_vals, y_vals, ylabel="", title="", hus_label=None,
             gridcolor="#E8EDF2",
             gridwidth=1,
             ticksuffix="%" if fmt_pct else "",
+            tickfont=dict(size=12, color=TEXT_DARK),
+            titlefont=dict(size=12, color=TEXT_DARK),
         ),
-        xaxis=dict(tickfont=dict(size=11)),
+        xaxis=dict(tickfont=dict(size=13, color=TEXT_DARK), tickangle=0),
         showlegend=False,
         height=320,
     )
@@ -415,7 +417,9 @@ with col_left:
                    font=dict(size=13, color=TEXT_DARK), x=0),
         plot_bgcolor="white", paper_bgcolor="white",
         margin=dict(l=10, r=10, t=40, b=10),
-        yaxis=dict(title="Uker", gridcolor="#E8EDF2"),
+        yaxis=dict(title="Uker", gridcolor="#E8EDF2",
+                   tickfont=dict(size=12, color=TEXT_DARK)),
+        xaxis=dict(tickfont=dict(size=13, color=TEXT_DARK), tickangle=0),
         height=310,
     )
     st.plotly_chart(fig_tw, use_container_width=True)
