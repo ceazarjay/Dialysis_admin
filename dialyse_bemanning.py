@@ -116,7 +116,7 @@ sick_leave = {
 
 # Patient : nurse ratio (HUS reported as 3–6 + outpost; encoded as 6 for chart)
 pt_nurse = {
-    "HUS": 6.0, "VOSS": 2.5, "KALNES": 2.5, "DRAMMEN": 2.5,
+    "HUS": 3, "VOSS": 2.5, "KALNES": 2.5, "DRAMMEN": 2.5,
     "TRONDHEIM": 2.5, "LOVISENBERG": 2.5, "ULLEVÅL": 2.5,
     "AHUS": 2.75, "STAVANGER": 2.75, "TROMSØ": 2.5,
 }
@@ -330,7 +330,7 @@ with col_a:
                       reference_line=2.5, ref_label="Bransjestd. 2.5")
     # Add annotation on HUS bar
     fig_pt.add_annotation(
-        x="HUS", y=3-6, text="+ utpostansvar",
+        x="HUS", y=6,2, text="+ utpostansvar",
         showarrow=False, font=dict(color=HUS_COL, size=11, family="Segoe UI"),
     )
     st.plotly_chart(fig_pt, use_container_width=True)
