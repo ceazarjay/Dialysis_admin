@@ -537,7 +537,7 @@ for h, x, y, c, s in zip(scatter_h, scatter_x, scatter_y, scatter_c, scatter_s):
         marker=dict(color=c, size=s, line=dict(color="white", width=1.5)),
         text=[h],
         textposition="top center",
-        textfont=dict(size=10, color=label_col),
+        textfont=dict(size=10, color=label_col, color=TEXT_DARK),
         name=h,
         hovertemplate=f"{h}: {x} HD-pas., {y} årsverk<extra></extra>",
         showlegend=False,
@@ -547,7 +547,7 @@ fig_sc.update_layout(
     xaxis=dict(title="Antall hemodialysepas.", gridcolor="#E8EDF2"),
     yaxis=dict(title="Registrerte årsverk", gridcolor="#E8EDF2"),
     plot_bgcolor="white", paper_bgcolor="white",
-    margin=dict(l=10, r=10, t=20, b=10, color=TEXT_DARK),
+    margin=dict(l=10, r=10, t=20, b=10,),
     height=340,
 )
 st.plotly_chart(fig_sc, use_container_width=True)
