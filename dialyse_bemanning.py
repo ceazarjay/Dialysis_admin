@@ -547,14 +547,14 @@ fig_sc.update_layout(
     xaxis=dict(
         title=dict(
             text="Antall hemodialysepas.",
-            font=dict(color=TEXT_DARK, size=14)
+            font=dict(color=TEXT_DARK, size=16)
         ),
         gridcolor="#E8EDF2"
     ),
     yaxis=dict(
         title=dict(
             text="Registrerte årsverk",
-            font=dict(color=TEXT_DARK, size=14)
+            font=dict(color=TEXT_DARK, size=16)
         ),
         gridcolor="#E8EDF2"
     ),
