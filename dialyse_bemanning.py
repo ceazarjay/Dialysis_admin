@@ -544,8 +544,20 @@ for h, x, y, c, s in zip(scatter_h, scatter_x, scatter_y, scatter_c, scatter_s):
     ))
 
 fig_sc.update_layout(
-    xaxis=dict(title="Antall hemodialysepas.", gridcolor="#E8EDF2"),
-    yaxis=dict(title="Registrerte årsverk", gridcolor="#E8EDF2"),
+    xaxis=dict(
+        title=dict(
+            text="Antall hemodialysepas.",
+            font=dict(color=TEXT_DARK, size=12)
+        ),
+        gridcolor="#E8EDF2"
+    ),
+    yaxis=dict(
+        title=dict(
+            text="Registrerte årsverk",
+            font=dict(color=TEXT_DARK, size=12)
+        ),
+        gridcolor="#E8EDF2"
+    ),
     plot_bgcolor="white", paper_bgcolor="white",
     margin=dict(l=10, r=10, t=20, b=10,),
     height=340,
