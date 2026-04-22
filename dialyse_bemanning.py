@@ -537,7 +537,7 @@ for h, x, y, c, s in zip(scatter_h, scatter_x, scatter_y, scatter_c, scatter_s):
         marker=dict(color=c, size=s, line=dict(color="white", width=1.5)),
         text=[h],
         textposition="top center",
-        textfont=dict(size=10, color=label_col,),
+        textfont=dict(size=12, color=label_col,),
         name=h,
         hovertemplate=f"{h}: {x} HD-pas., {y} årsverk<extra></extra>",
         showlegend=False,
