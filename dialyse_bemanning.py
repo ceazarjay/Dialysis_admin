@@ -547,7 +547,7 @@ fig_sc.update_layout(
     xaxis=dict(title="Antall hemodialysepas.", gridcolor="#E8EDF2"),
     yaxis=dict(title="Registrerte årsverk", gridcolor="#E8EDF2"),
     plot_bgcolor="white", paper_bgcolor="white",
-    margin=dict(l=10, r=10, t=20, b=10),
+    margin=dict(l=10, r=10, t=20, b=10, color=TEXT_DARK),
     height=340,
 )
 st.plotly_chart(fig_sc, use_container_width=True)
